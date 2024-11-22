@@ -78,7 +78,7 @@ npm run build
 ```
 
 ## 🖥️ Live-Demo
-Die Live-Version dieses Projekts ist hier verfügbar: 
+Die Live-Version dieses Projekts ist hier verfügbar: https://dev-portfolio-ebon-nu.vercel.app/
 
 ## 🔗 Weitere Projekte
 Weitere meiner Projekte findest du hier: https://github.com/PeterKlass
