@@ -25,18 +25,22 @@ const aboutData = [
       {
         title: 'Web Development',
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiNextdotjs />,
-          <SiFramer />,
-          <FaWordpress />,
+          <FaHtml5 key="html" />,
+          <FaCss3 key="css" />,
+          <FaJs key="js" />,
+          <FaReact key="react" />,
+          <SiNextdotjs key="nextjs" />,
+          <SiFramer key="framer" />,
+          <FaWordpress key="wordpress" />,
         ],
       },
       {
         title: 'UI/UX Design',
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
+        icons: [
+          <FaFigma key="figma" />,
+          <SiAdobexd key="adobexd" />,
+          <SiAdobephotoshop key="photoshop" />,
+        ],
       },
     ],
   },
@@ -135,7 +139,7 @@ const About = () => {
             exit='hidden' 
             className='max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0'
           > 
-            10 years ago, I began freelancing as a developer. Since then, I've done remote work for agencies, counsulted for startups, and collaborated on digitial products for business and consumer use.
+            10 years ago, I began freelancing as a developer. Since then, I&apos;ve done remote work for agencies, counsulted for startups, and collaborated on digitial products for business and consumer use.
           </motion.p>
           {/* counters */}
           <motion.div 
@@ -212,17 +216,18 @@ const About = () => {
               return (
                 <div 
                   key={itemIndex}
-                  className='flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60'
-                >
+                  className='flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60'>
                   {/* title */}
                   <div className='font-light mb-2 md:mb-0'>{item.title}</div>
                   <div className='hidden md:flex'>-</div>
                   <div>{item.stage}</div>
                   <div className='flex gap-x-4'>
                     {/* icons */}
-                    {item.icons?.map((icon, itemIndex) => {
-                      return <div className='text-2xl text-white'>{icon}</div>;
-                    })}
+                    {item.icons?.map((icon, iconIndex) => (
+                      <div key={iconIndex} className='text-2xl text-white'>
+                        {icon}
+                      </div>
+                    ))}
                   </div>
                 </div>
               );
